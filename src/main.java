@@ -7,9 +7,11 @@ public class main {
         GameMap map = new GameMap(25, 50);
         Scanner sc = new Scanner(System.in);
         map.addPlayer(12, 25);
+        map.randomAdd(new Rat());
+
         map.drawMap();
-        //map.drawHUD();
-        
+        // map.drawHUD();
+
         while (!map.isOver()) {
             String cmd = sc.nextLine();
 
@@ -28,10 +30,10 @@ public class main {
             if (cmd.equals("a")) {
                 map.movePlayer(0, -1);
             }
-            
+
             map.drawMap();
-            
-            if(cmd.equals("quit")) {
+
+            if (cmd.equals("quit")) {
                 break;
             }
         }
